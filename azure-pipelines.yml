@@ -32,4 +32,4 @@ steps:
     azureSubscription: 'Azure pour les étudiants(2ed15fe8-887a-4def-8a9c-c477c7d6fb56)'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
-    inlineScript: "az storage blob upload-batch -d '$web' -s $(build.binariesDirectory) --account.name $(CompteDeStockageSaad) --account-key $(CompteDeStockageKey)"
+    inlineScript: "az storage blob upload-batch -d '$web' -s $(build.binariesDirectory) --account-name $(CompteDeStockageSaad) --account-key $(CompteDeStockageKey)"
