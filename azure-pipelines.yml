@@ -20,6 +20,11 @@ steps:
       $(build.sourcesDirectory):/srv/jekyll
       $(build.binariesDirectory):/srv/jekyll/_site
     containerCommand: /bin/bash -c "chmmod 777 /srv/jekyll && jekyll build"
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.binariesDirectory)'
+    ArtifactName: 'WEB'
+    publishLocation: 'Container'
 - task: AzureKeyVault@1
   inputs:
     azureSubscription: 'Azure pour les étudiants(2ed15fe8-887a-4def-8a9c-c477c7d6fb56)'
