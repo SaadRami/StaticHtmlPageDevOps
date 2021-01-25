@@ -19,7 +19,7 @@ steps:
     volumes: |
       $(build.sourcesDirectory):/srv/jekyll
       $(build.binariesDirectory):/srv/jekyll/_site
-    containerCommand: /bin/bash -c "chmmod 777 /srv/jekyll && jekyll build"
+    containerCommand: /bin/bash -c "chmod 777 /srv/jekyll && jekyll build"
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.binariesDirectory)'
